@@ -1,0 +1,115 @@
+:root {
+  --yellow: #eba611;
+}
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem;
+}
+
+header h1 {
+  color: #fff;
+  letter-spacing: 2px; 
+  padding-left: 0.5rem;
+}
+
+header h1 span {
+  color: var(--yellow);
+}
+
+.menu-btn {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  padding-right: 1.5rem;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.menu-btn:hover {
+  color: var(--yellow);
+}
+
+.vertical-navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: #000;
+  height: 100vh;
+  right: 0;
+  list-style: none; 
+}
+
+.vertical-navbar .nav-links {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.vertical-navbar li {
+  margin-top: 1rem;
+}
+
+.horizontal-navbar {
+  display: flex;
+  padding: 1rem;
+  margin-right: 2rem;
+}
+
+.horizontal-navbar li {
+  margin-right: 1.3rem;
+}
+
+.horizontal-navbar .nav-links {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  position: relative;
+  transition: all .5s;
+}
+
+.nav-links:hover {
+  color: var(--yellow);
+}
+
+.nav-links::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Adjust as needed to position the underline */
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: var(--yellow); /* Color of the underline */
+  transition: width 0.4s ease;
+}
+
+.nav-links:hover::after {
+  width: calc(100% + 10px); /* 10px padding on each side */
+  left: -5px; /* Center the underline with padding */
+}
+
+@media (max-width: 480px) {
+  .horizontal-navbar {
+    display: none;
+  }
+  .menu-btn{
+    display: block;
+  }
+}
+
+@media(min-width: 760px) {
+  header h1 {
+    margin-left: 2rem;
+  }
+}
